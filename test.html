@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test</title>
+</head>
+<body style="font-family:sans-serif;padding:20px;font-size:18px;">
+
+<div style="background:#eee;padding:20px;margin-bottom:20px;border-radius:8px;">
+<b>Step 1:</b> If you see this gray box, HTML works.
+</div>
+
+<div id="js-test" style="background:#fee;padding:20px;margin-bottom:20px;border-radius:8px;color:#900;">
+<b>Step 2:</b> JavaScript is NOT running. (If you see this red box, JS is blocked.)
+</div>
+
+<script>
+document.getElementById("js-test").innerHTML = "<b>Step 2:</b> ✓ JavaScript IS running!";
+document.getElementById("js-test").style.background = "#dfd";
+document.getElementById("js-test").style.color = "#060";
+
+var info = "User Agent: " + navigator.userAgent + "\n\n"
+  + "Window: " + window.innerWidth + "x" + window.innerHeight + "\n"
+  + "localStorage: " + (typeof localStorage !== "undefined" ? "available" : "BLOCKED") + "\n"
+  + "Date: " + new Date().toString();
+
+var div = document.createElement("div");
+div.style.background = "#ffd";
+div.style.padding = "20px";
+div.style.borderRadius = "8px";
+div.style.whiteSpace = "pre-wrap";
+div.style.fontFamily = "monospace";
+div.style.fontSize = "11px";
+div.textContent = info;
+document.body.appendChild(div);
+</script>
+
+</body>
+</html>
